@@ -1,7 +1,7 @@
-
 var express = require("express");
 var fs = require("fs");
 var app = express();
+
 const PORT = process.env.PORT || 3000;
 var archive = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
 // Sets up the Express app to handle data parsing
@@ -50,7 +50,7 @@ app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
 // Listener
-// ===========================================================
+
 app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
 });
