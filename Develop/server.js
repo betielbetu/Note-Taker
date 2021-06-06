@@ -14,7 +14,6 @@ var dataBase = require("./db/db.json");
 const path = require('path');
 // Routes
 
-
 app.get("/notes", function (req, res) {
   res.sendFile(path.join(__dirname, './public/notes.html'));
 });
@@ -31,7 +30,6 @@ app.post("/api/notes", function (req, res) {
   fs.writeFileSync('./db/db.json', JSON.stringify(archive));
   res.json(archive);
 });
-
 
 app.delete("/api/notes/:id", function (req, res) {
   let deleteId = req.params.id;
